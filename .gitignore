@@ -1,0 +1,22 @@
+build/
+Debug/
+Release/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+*.log
+results/*.log.json
+Drivers/CMSIS/
+Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Keep reviewed JSON/text summaries and scenario artifacts under results/;
+# ignore only generated logs and firmware build outputs.

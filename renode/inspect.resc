@@ -1,0 +1,6 @@
+using sysbus
+mach create
+machine LoadPlatformDescription @platforms/cpus/stm32f103.repl
+nvic
+timer1
+quit

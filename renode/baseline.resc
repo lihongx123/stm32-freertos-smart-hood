@@ -1,0 +1,10 @@
+using sysbus
+mach create "smart-hood"
+machine LoadPlatformDescription @platforms/cpus/stm32f103.repl
+nvic Frequency 8000000
+timer1 Frequency 8000000
+sysbus LoadELF @build/SensorTelemetry.elf
+usart1 CreateFileBackend @results/baseline-renode-corrected.log
+emulation RunFor "2"
+cpu PC
+quit

@@ -1,0 +1,19 @@
+# CubeMX/vendor generated sources retain their original formatting and license
+# headers. Application-only files remain subject to normal whitespace checks.
+.mxproject -whitespace
+Core/Inc/FreeRTOSConfig.h -whitespace
+Core/Inc/main.h -whitespace
+Core/Inc/stm32f1xx_hal_conf.h -whitespace
+Core/Inc/stm32f1xx_it.h -whitespace
+Core/Src/freertos.c -whitespace
+Core/Src/main.c -whitespace
+Core/Src/stm32f1xx_hal_msp.c -whitespace
+Core/Src/stm32f1xx_hal_timebase_tim.c -whitespace
+Core/Src/stm32f1xx_it.c -whitespace
+Core/Src/system_stm32f1xx.c -whitespace
+Drivers/** -whitespace
+Middlewares/** -whitespace
+Makefile -whitespace
+Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt whitespace=-blank-at-eof,-trailing-space,-space-before-tab
+STM32F103xx_FLASH.ld -whitespace
+startup_stm32f103xb.s -whitespace

@@ -1,0 +1,32 @@
+{
+  "validation_passed": true,
+  "source_and_elf_fingerprints_verified": true,
+  "assertions_passed": 19,
+  "assertions_total": 19,
+  "simulation_seconds": 43.70000000000009,
+  "last_periodic_counters": {
+    "uart_rx_bytes": 4391,
+    "frame_ok": 175,
+    "frame_error": 14,
+    "ring_overflow": 770,
+    "queue_drop": 17
+  },
+  "last_periodic_status": {
+    "state": 1,
+    "fan": 0,
+    "light": 0,
+    "state_transition_count": 24,
+    "fault_count": 7,
+    "fault_mask": 0
+  },
+  "min_free_heap_bytes": 4168,
+  "min_stack_free_words": {
+    "stack_comm": 106,
+    "stack_sensor": 220,
+    "stack_control": 204,
+    "stack_fault": 92,
+    "stack_monitor": 310
+  },
+  "size_output": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  27576\t    108\t  18164\t  45848\t   b318\tbuild/SensorTelemetry.elf\n",
+  "scope": "Periodic UART snapshots; fault/overflow counters include deliberate injections; no physical hardware."
+}
