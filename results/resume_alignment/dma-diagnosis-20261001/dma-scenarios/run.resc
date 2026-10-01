@@ -1,0 +1,9 @@
+include @renode/HoodSTM32DMA.cs
+using sysbus
+mach create "smart-hood"
+machine LoadPlatformDescription @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/resume_alignment/dma-diagnosis-20261001/dma-scenarios/corrected-platform.repl
+nvic Frequency 8000000
+timer1 Frequency 8000000
+sysbus LoadELF @build/SensorTelemetry.elf
+emulation CreateServerSocketTerminal 12346 "sensor" false
+connector Connect usart1 sensor

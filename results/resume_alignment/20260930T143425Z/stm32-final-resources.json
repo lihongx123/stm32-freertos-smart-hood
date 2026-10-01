@@ -1,0 +1,115 @@
+{
+  "free_heap": 4176,
+  "stack_comm": 106,
+  "stack_sensor": 220,
+  "stack_control": 204,
+  "stack_fault": 92,
+  "stack_monitor": 310,
+  "configured_heap_bytes": 12288,
+  "stack_watermark_unit": "32-bit words; IRQ functional simulation, not DMA hardware",
+  "dma_firmware_size": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  29388\t    108\t  18772\t  48268\t   bc8c\tbuild/SensorTelemetry.elf\n",
+  "functional_firmware_size": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n  28524\t    108\t  18508\t  47140\t   b824\tbuild-irq-functional/SensorTelemetry.elf\n",
+  "functional_checks": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "boot",
+        "pass": true,
+        "simulation_seconds": 0.5
+      },
+      {
+        "name": "RTOS heartbeat",
+        "pass": true,
+        "simulation_seconds": 2.5
+      },
+      {
+        "name": "idle NORMAL",
+        "pass": true,
+        "simulation_seconds": 2.5
+      },
+      {
+        "name": "light cooking MEDIUM",
+        "pass": true,
+        "simulation_seconds": 4.5
+      },
+      {
+        "name": "heavy cooking HIGH",
+        "pass": true,
+        "simulation_seconds": 6.5
+      },
+      {
+        "name": "backflow warning/BOOST",
+        "pass": true,
+        "simulation_seconds": 8.5
+      },
+      {
+        "name": "dark light ON",
+        "pass": true,
+        "simulation_seconds": 10.5
+      },
+      {
+        "name": "invalid sensor FAULT",
+        "pass": true,
+        "simulation_seconds": 12.5
+      },
+      {
+        "name": "recovery hysteresis",
+        "pass": true,
+        "simulation_seconds": 15.5
+      },
+      {
+        "name": "communication/sensor timeout",
+        "pass": true,
+        "simulation_seconds": 18.0
+      },
+      {
+        "name": "fragmented frame and three-frame burst",
+        "pass": true,
+        "simulation_seconds": 22.1
+      },
+      {
+        "name": "malformed rejected",
+        "pass": true,
+        "simulation_seconds": 22.6
+      },
+      {
+        "name": "embedded NUL rejected",
+        "pass": true,
+        "simulation_seconds": 26.1
+      },
+      {
+        "name": "overlong frame rejected",
+        "pass": true,
+        "simulation_seconds": 29.6
+      },
+      {
+        "name": "ring overflow detected",
+        "pass": true,
+        "simulation_seconds": 36.7
+      },
+      {
+        "name": "software watchdog detects stalled ControlTask",
+        "pass": true,
+        "simulation_seconds": 39.7
+      },
+      {
+        "name": "queue overflow detected",
+        "pass": true,
+        "simulation_seconds": 39.7
+      },
+      {
+        "name": "final NORMAL recovery",
+        "pass": true,
+        "simulation_seconds": 43.7
+      },
+      {
+        "name": "all task stacks have headroom",
+        "pass": true,
+        "simulation_seconds": 43.7
+      }
+    ],
+    "simulation_seconds": 43.70000000000009,
+    "firmware_mode": "irq-fallback",
+    "dma_hardware_verified": false
+  }
+}

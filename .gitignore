@@ -1,4 +1,5 @@
 build/
+build-irq-functional/
 Debug/
 Release/
 *.o

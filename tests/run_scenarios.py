@@ -34,21 +34,45 @@ def connect(port, process):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', default='results/scenarios-01')
+    parser.add_argument('--firmware-mode', choices=('dma', 'irq-fallback'), default='dma')
+    parser.add_argument('--corrected-dma-model', action='store_true',
+                        help='Use project-local EN-readback fix and isolate HAL tick DMA wiring')
     parser.add_argument('--renode', default=shutil.which('renode') or str(pathlib.Path.home() / 'tools/renode/renode'))
     args = parser.parse_args()
     os.chdir(ROOT)
     output = ROOT / args.output
     output.mkdir(parents=True, exist_ok=False)
+    build_dir = 'build' if args.firmware_mode == 'dma' else 'build-irq-functional'
+    make_args = ['make', '-j' + str(os.cpu_count()), 'BUILD_DIR=' + build_dir]
+    if args.firmware_mode == 'irq-fallback':
+        make_args.append('C_DEFS=-DUSE_HAL_DRIVER -DSTM32F103xB -DAPP_UART_RX_IT_FALLBACK=1')
     with (output / 'build.log').open('w') as log:
-        subprocess.run(['make', '-j' + str(os.cpu_count())], stdout=log, stderr=subprocess.STDOUT, check=True)
-    (output / 'size.txt').write_text(subprocess.check_output(['arm-none-eabi-size', 'build/SensorTelemetry.elf'], text=True))
-    shutil.copyfile('build/SensorTelemetry.elf', output / 'SensorTelemetry.elf')
+        subprocess.run(make_args, stdout=log, stderr=subprocess.STDOUT, check=True)
+    elf = build_dir + '/SensorTelemetry.elf'
+    (output / 'size.txt').write_text(subprocess.check_output(['arm-none-eabi-size', elf], text=True))
+    shutil.copyfile(elf, output / 'SensorTelemetry.elf')
+    script = output / 'run.resc'
+    script_text=(ROOT/'renode/hood.resc').read_text().replace('@build/SensorTelemetry.elf', '@'+elf)
+    if args.corrected_dma_model:
+        platform_path=pathlib.Path(args.renode).resolve().parent/'platforms/cpus/stm32f103.repl'
+        platform=platform_path.read_text()
+        assert platform.count('UpdateInterrupt -> nvic@25 | dma1@5') == 1
+        platform=platform.replace('UpdateInterrupt -> nvic@25 | dma1@5','UpdateInterrupt -> nvic@25')
+        platform=platform.replace('dma1: DMA.STM32G0DMA','dma1: DMA.HoodSTM32DMA')
+        local_platform=output/'corrected-platform.repl'
+        local_platform.write_text(platform)
+        script_text='include @renode/HoodSTM32DMA.cs\n'+script_text.replace(
+            '@platforms/cpus/stm32f103.repl','@'+str(local_platform))
+    script.write_text(script_text)
     sources = list((ROOT / 'Core/Src').glob('*.c')) + list((ROOT / 'Core/Inc').glob('*.h'))
     sources += [ROOT/'Makefile', ROOT/'renode/hood.resc', ROOT/'tools/sensor_sim.py', pathlib.Path(__file__).resolve()]
+    if args.corrected_dma_model:
+        sources.append(ROOT/'renode/HoodSTM32DMA.cs')
     (output / 'manifest.json').write_text(json.dumps({
         'elf_sha256': hashlib.sha256((output/'SensorTelemetry.elf').read_bytes()).hexdigest(),
         'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
-        'renode': args.renode, 'simulation': True}, indent=2))
+        'renode': args.renode, 'simulation': True, 'firmware_mode': args.firmware_mode,
+        'corrected_dma_model': args.corrected_dma_model}, indent=2))
     checks = []
     process = None
     monitor = uart = None
@@ -63,7 +87,7 @@ def main():
         for port in (12345, 12346):
             with socket.socket() as probe:
                 probe.bind(('127.0.0.1', port))
-        process = subprocess.Popen([args.renode, '--disable-gui', '--plain', '--port', '12345', 'renode/hood.resc'],
+        process = subprocess.Popen([args.renode, '--disable-gui', '--plain', '--port', '12345', str(script)],
                                    stdout=console, stderr=subprocess.STDOUT)
         monitor = connect(12345, process)
 
@@ -183,7 +207,9 @@ def main():
                 process.wait(timeout=5)
         for log in (console, uart_log, tx_log, monitor_log): log.close()
         passed = bool(checks) and all(item['pass'] for item in checks)
-        result = {'passed': passed, 'checks': checks, 'simulation_seconds': virtual}
+        result = {'passed': passed, 'checks': checks, 'simulation_seconds': virtual,
+                  'firmware_mode': args.firmware_mode, 'dma_hardware_verified': False,
+                  'corrected_dma_model': args.corrected_dma_model}
         (output / 'validation-summary.json').write_text(json.dumps(result, indent=2))
     return 0 if passed else 1
 

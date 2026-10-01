@@ -59,6 +59,7 @@ extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
 extern UART_HandleTypeDef huart1;
+extern DMA_HandleTypeDef hdma_usart1_rx;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -174,6 +175,10 @@ void TIM1_UP_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+void DMA1_Channel5_IRQHandler(void)
+{
+  HAL_DMA_IRQHandler(&hdma_usart1_rx);
+}
 void USART1_IRQHandler(void)
 {
   HAL_UART_IRQHandler(&huart1);

@@ -1,6 +1,11 @@
 #ifndef APP_CONFIG_H
 #define APP_CONFIG_H
-#define UART_RING_CAPACITY 256U
+#define UART_RING_CAPACITY 512U
+#define UART_DMA_RX_CAPACITY 256U
+/* Only an explicitly labelled functional simulator build may override this. */
+#ifndef APP_UART_RX_IT_FALLBACK
+#define APP_UART_RX_IT_FALLBACK 0
+#endif
 #define APP_FRAME_CAPACITY 96U
 #define APP_PERIOD_MS 100U
 #define APP_HEALTH_PERIOD_MS 250U

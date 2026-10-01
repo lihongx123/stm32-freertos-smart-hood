@@ -1,4 +1,5 @@
 #include "hood_app.h"
+extern volatile uint32_t app_dma_events, app_dma_bytes, app_uart_errors;
 void FaultTask(void *argument)
 {
     (void)argument;
@@ -45,6 +46,9 @@ void MonitorTask(void *argument)
         if (health!=previous) { app_log("HEALTH,stalled=%lu",(unsigned long)health); previous=health; }
         if (iteration++%4==0) {
             app_log("HEARTBEAT seq=%u,tick=%lu",iteration/4+1,(unsigned long)now);
+            app_log("RXDMA,events=%lu,bytes=%lu,errors=%lu,fallback=%u",
+                (unsigned long)app_dma_events,(unsigned long)app_dma_bytes,
+                (unsigned long)app_uart_errors,APP_UART_RX_IT_FALLBACK);
             app_log("METRIC,uart_rx_bytes=%lu,frame_ok=%lu,frame_error=%lu,ring_overflow=%lu,queue_drop=%lu",
                 (unsigned long)app_ring.bytes_received,(unsigned long)snapshot.frame_ok,
                 (unsigned long)snapshot.frame_error,(unsigned long)app_ring.overflow,(unsigned long)snapshot.queue_drop);

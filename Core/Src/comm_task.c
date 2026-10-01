@@ -1,11 +1,19 @@
 #include "hood_app.h"
 #include "main.h"
+#include "uart_dma_rx.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #include <errno.h>
 extern UART_HandleTypeDef huart1;
+#if APP_UART_RX_IT_FALLBACK
 static uint8_t rx_byte;
+#else
+static uint8_t dma_rx[UART_DMA_RX_CAPACITY];
+static UartDmaCursor dma_cursor;
+#endif
+static volatile unsigned rx_recovery;
+volatile uint32_t app_dma_events, app_dma_bytes, app_uart_errors;
 int sensor_frame_parse(const char *frame, SensorData *data)
 {
     long values[5];
@@ -27,6 +35,7 @@ int sensor_frame_parse(const char *frame, SensorData *data)
     data->light=values[3]; data->differential_pressure=values[4]; data->valid=1;
     return 1;
 }
+#if APP_UART_RX_IT_FALLBACK
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *uart)
 {
     if (uart->Instance != USART1) return;
@@ -36,9 +45,44 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *uart)
     vTaskNotifyGiveFromISR(app_tasks[TASK_COMM], &wake);
     portYIELD_FROM_ISR(wake);
 }
+#else
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *uart, uint16_t size)
+{
+    (void)size;
+    if (uart->Instance != USART1 || !app_tasks[TASK_COMM]) return;
+    /* Sample NDTR, not an old HT callback's fixed Size. USART/DMA IRQs have
+     * equal preemption priority, so this SPSC producer cannot nest itself. */
+    uint16_t position = UART_DMA_RX_CAPACITY - __HAL_DMA_GET_COUNTER(uart->hdmarx);
+    if (!position && HAL_UARTEx_GetRxEventType(uart) == HAL_UART_RXEVENT_TC)
+        position = UART_DMA_RX_CAPACITY;
+    ++app_dma_events;
+    unsigned count = uart_dma_drain(&dma_cursor, dma_rx, UART_DMA_RX_CAPACITY,
+                                    position, &app_ring);
+    app_dma_bytes += count;
+    if (count) {
+        BaseType_t wake = pdFALSE;
+        vTaskNotifyGiveFromISR(app_tasks[TASK_COMM], &wake);
+        portYIELD_FROM_ISR(wake);
+    }
+}
+#endif
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *uart)
 {
-    if (uart->Instance == USART1) HAL_UART_Receive_IT(uart, &rx_byte, 1);
+    if (uart->Instance != USART1 || !app_tasks[TASK_COMM]) return;
+    ++app_uart_errors;
+    rx_recovery = 1;
+    BaseType_t wake = pdFALSE;
+    vTaskNotifyGiveFromISR(app_tasks[TASK_COMM], &wake);
+    portYIELD_FROM_ISR(wake);
+}
+static HAL_StatusTypeDef start_receive(void)
+{
+#if APP_UART_RX_IT_FALLBACK
+    return HAL_UART_Receive_IT(&huart1, &rx_byte, 1);
+#else
+    dma_cursor.position = 0;
+    return HAL_UARTEx_ReceiveToIdle_DMA(&huart1, dma_rx, sizeof(dma_rx));
+#endif
 }
 void CommTask(void *argument)
 {
@@ -46,11 +90,22 @@ void CommTask(void *argument)
     char frame[APP_FRAME_CAPACITY];
     unsigned length=0, discard=0;
     uint32_t overflow=0;
-    HAL_UART_Receive_IT(&huart1, &rx_byte, 1);
+    if (start_receive() != HAL_OK) Error_Handler();
     app_log("COMM_READY");
     for (;;) {
         app_beat(TASK_COMM);
         ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(APP_PERIOD_MS));
+        if (rx_recovery) {
+            /* Abort/restart and frame resynchronization happen in task context. */
+            taskENTER_CRITICAL();
+            HAL_UART_AbortReceive(&huart1);
+            rx_recovery = 0;
+            app_ring.tail = app_ring.head;
+            HAL_StatusTypeDef result = start_receive();
+            taskEXIT_CRITICAL();
+            discard = 1; length = 0;
+            if (result != HAL_OK) rx_recovery = 1;
+        }
         uint8_t byte;
         while (uart_ring_pop(&app_ring, &byte)) {
             if (overflow != app_ring.overflow) { overflow=app_ring.overflow; discard=1; length=0; }

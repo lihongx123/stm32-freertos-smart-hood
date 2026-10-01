@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+  28524	    108	  18508	  47140	   b824	build-irq-functional/SensorTelemetry.elf

@@ -1,0 +1,13 @@
+{
+  "elf_sha256": "e0506759928ce4b706e95eb2597d1b5974e46f3bcc4159b2335b6a6ad3d10f46",
+  "probe_sha256": "db7c9cabca04062ec84e8cbe921f7cf495ff28e9deed85b163918bf13ce84935",
+  "model_sha256": "f9b1692caf26a8278b653f25d1a4f34f1a699135e08cb0a6bb4dc6f85cbd321f",
+  "arguments": {
+    "output": "results/resume_alignment/dma-diagnosis-20261001/verified-enable",
+    "platform": null,
+    "isolate_timer": true,
+    "fixed_dma": true,
+    "verify": true,
+    "read_enable": true
+  }
+}

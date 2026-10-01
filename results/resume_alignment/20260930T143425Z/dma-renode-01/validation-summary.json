@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "boot",
+      "pass": true,
+      "simulation_seconds": 0.5
+    },
+    {
+      "name": "RTOS heartbeat",
+      "pass": true,
+      "simulation_seconds": 2.5
+    },
+    {
+      "name": "idle NORMAL",
+      "pass": false,
+      "simulation_seconds": 2.5
+    },
+    {
+      "name": "execution",
+      "pass": false,
+      "error": "idle NORMAL"
+    }
+  ],
+  "simulation_seconds": 2.5
+}

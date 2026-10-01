@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+  29388	    108	  18772	  48268	   bc8c	build/SensorTelemetry.elf

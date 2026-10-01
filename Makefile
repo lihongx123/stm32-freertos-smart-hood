@@ -40,6 +40,7 @@ Core/Src/main.c \
 Core/Src/hood_app.c \
 Core/Src/comm_task.c \
 Core/Src/uart_ring.c \
+Core/Src/uart_dma_rx.c \
 Core/Src/hood_state.c \
 Core/Src/sensor_task.c \
 Core/Src/control_task.c \

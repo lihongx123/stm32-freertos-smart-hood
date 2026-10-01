@@ -1,0 +1,251 @@
+{
+  "root": "/home/hello/projects/smart-hood-baseline/SensorTelemetry",
+  "head": "801a64af6c7d96cdc4196191e8b69137ab99cd65",
+  "status": "?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? results/resume_alignment/\n",
+  "ignore_eol_stat": "",
+  "sources_sha256": {
+    "Core/Src/hood_state.c": "3af5ab5d3b65fbea9692c7ac032dbbd79080f2196bb0b234b14291e4300f1ceb",
+    "Core/Src/control_task.c": "8bc5451e99df74ed3e86929efa72193125232e7a848dd756642ac4d550f973e7",
+    "Core/Src/system_stm32f1xx.c": "6f13b57054f33b4dcb8f3f23fa05b2942d9dca8abd9a2a08ecde6f99693505a5",
+    "Core/Src/fault_monitor.c": "56003ef9300db3cfabca492624a3112855e07e0a76db1622b43ec4aa016be732",
+    "Core/Src/syscalls.c": "03c06c72eafb44b499814cf9234aba57dd830f345d9b8779b5d7090e78517600",
+    "Core/Src/stm32f1xx_hal_msp.c": "6ddd0450f180d16c68051da953d6b3771d234ed04a46ab370edadbadc0094ef4",
+    "Core/Src/sysmem.c": "ad20f7b1fa1e7c73330727747222cf2ffa3245ebf035230ee9a157545e79df95",
+    "Core/Src/hood_app.c": "7a412bb2d6dc87eb88e9cf3d56114bedfae9528dd6186a39de8c67a2676b57a6",
+    "Core/Src/sensor_task.c": "fff3130158119388a944b6a456a431b3d053cddb32f05e6371375a2d3c4472ab",
+    "Core/Src/stm32f1xx_it.c": "f478e793d68cb62a4713dce071e08e0fbcab66b7e7a496a1bf8e72211be83162",
+    "Core/Src/main.c": "dabffd0e5b3a6ed66a220d1359bf1576fe5ddcea9f054796673dadced074d7af",
+    "Core/Src/comm_task.c": "2212e671088dfef7a762387aafa3b5997a1633d24f79b457144b16968b56ae08",
+    "Core/Src/stm32f1xx_hal_timebase_tim.c": "d7a2e9b867cbbb111477aa845a1efacd6c4b2e920184efa49195022b23f37bab",
+    "Core/Src/uart_ring.c": "402aa3ec30100c2c7e44301b5cb9065bd639064c9528f30c79f45fa9f4449c99",
+    "Core/Src/freertos.c": "83ee77bdc9cd53ee615d47caf7ade123acefeadd922beb3b468c4037b6130559",
+    "Core/Inc/stm32f1xx_it.h": "30e9d159293223252ba5dfc1ce754399f73f1c54a9616560f764de4ac059ae4b",
+    "Core/Inc/stm32f1xx_hal_conf.h": "e8b55f7310fd4fd5ad32e4db19336c822f2fbf615b80feedf184faf14c797bae",
+    "Core/Inc/app_types.h": "ba30ff1e7c273bf81c1d57cd07c5a91af84dcf8db68be1fdc89ad08ee3ec6266",
+    "Core/Inc/hood_app.h": "d46dc3a3f9079815d1da9cf73c052551e7c629a69bcd56fa1fec1f3db42b4449",
+    "Core/Inc/FreeRTOSConfig.h": "89ec241dfcb8229ca23489cacd8c77920dff775ef4a8375bccab43ea5a22e353",
+    "Core/Inc/uart_ring.h": "1ded1992142fa02ae75834be0b1c5dc2de8a27e88bceb2df920a6b704e5b2cbb",
+    "Core/Inc/main.h": "a00893e609e738aba5b7930f82ffc9f5b910fb14503e938507d4ea5dc38c37ae",
+    "Core/Inc/app_config.h": "f7933d6a2f2a4afad40220b8169a2c94c44152589c933620ff11a6677a6fca55",
+    "tests/unit.c": "de78cc4058d8d9e12e8ff7320343a71eb13596ca7cd7dd3b1adf2612481b97e9",
+    "tests/run_scenarios.py": "f965eab030b638ded5dd438df4a7382c923204fdbff55406b9ed7a61cc4d495e"
+  },
+  "historical_results": {
+    "results/renode-initial-console.log.json": {
+      "size": 200,
+      "mtime_ns": 1790110588529299337
+    },
+    "results/baseline-build.log": {
+      "size": 110,
+      "mtime_ns": 1790110546908647236
+    },
+    "results/phase-d-build.log.json": {
+      "size": 104,
+      "mtime_ns": 1790110915891146963
+    },
+    "results/heartbeat-build.log": {
+      "size": 1818,
+      "mtime_ns": 1790110619676960017
+    },
+    "results/model-help.log.json": {
+      "size": 199,
+      "mtime_ns": 1790110649283830680
+    },
+    "results/phase-c-build.log": {
+      "size": 23198,
+      "mtime_ns": 1790110842952878021
+    },
+    "results/phase-c-build.log.json": {
+      "size": 104,
+      "mtime_ns": 1790110842957089750
+    },
+    "results/phase-e-build.log": {
+      "size": 25612,
+      "mtime_ns": 1790110972059979412
+    },
+    "results/baseline-clean.log": {
+      "size": 13,
+      "mtime_ns": 1790110561536434425
+    },
+    "results/renode-heartbeat-console.log": {
+      "size": 12165,
+      "mtime_ns": 1790110623808854702
+    },
+    "results/baseline-build-retry.log": {
+      "size": 21444,
+      "mtime_ns": 1790110562501304715
+    },
+    "results/renode-initial-console.log": {
+      "size": 1171,
+      "mtime_ns": 1790110588512494693
+    },
+    "results/baseline-clean.log.json": {
+      "size": 107,
+      "mtime_ns": 1790110561540433895
+    },
+    "results/baseline-build-retry.log.json": {
+      "size": 104,
+      "mtime_ns": 1790110562502502551
+    },
+    "results/baseline-renode.log": {
+      "size": 675,
+      "mtime_ns": 1790110623792804655
+    },
+    "results/baseline-build.log.json": {
+      "size": 117,
+      "mtime_ns": 1790110546911236359
+    },
+    "results/unit-build.log": {
+      "size": 0,
+      "mtime_ns": 1790111209506123026
+    },
+    "results/renode-corrected-console.log": {
+      "size": 11910,
+      "mtime_ns": 1790110672511153256
+    },
+    "results/unit-test.log": {
+      "size": 73,
+      "mtime_ns": 1790111209912739977
+    },
+    "results/renode-heartbeat-console.log.json": {
+      "size": 200,
+      "mtime_ns": 1790110623824456028
+    },
+    "results/compiler-version.log.json": {
+      "size": 125,
+      "mtime_ns": 1790111397326441644
+    },
+    "results/heartbeat-build.log.json": {
+      "size": 105,
+      "mtime_ns": 1790110619678052954
+    },
+    "results/unit-test.log.json": {
+      "size": 106,
+      "mtime_ns": 1790111209912880323
+    },
+    "results/model-help.log": {
+      "size": 8908,
+      "mtime_ns": 1790110649268486345
+    },
+    "results/renode-corrected-console.log.json": {
+      "size": 199,
+      "mtime_ns": 1790110672528747523
+    },
+    "results/baseline-renode-corrected.log": {
+      "size": 103,
+      "mtime_ns": 1790110672495309127
+    },
+    "results/compiler-version.log": {
+      "size": 253,
+      "mtime_ns": 1790111397324694036
+    },
+    "results/unit-build.log.json": {
+      "size": 278,
+      "mtime_ns": 1790111209616473295
+    },
+    "results/phase-d-build.log": {
+      "size": 25001,
+      "mtime_ns": 1790110915888698000
+    },
+    "results/phase-e-build.log.json": {
+      "size": 104,
+      "mtime_ns": 1790110972061223606
+    },
+    "results/scenarios-final/measured-metrics.json": {
+      "size": 933,
+      "mtime_ns": 1790111521244643228
+    },
+    "results/scenarios-final/validation-summary.json": {
+      "size": 2080,
+      "mtime_ns": 1790111390902282980
+    },
+    "results/scenarios-final/build.log": {
+      "size": 1973,
+      "mtime_ns": 1790111335498737477
+    },
+    "results/scenarios-final/manifest.json": {
+      "size": 2798,
+      "mtime_ns": 1790173014275131013
+    },
+    "results/scenarios-final/sensor-tx.jsonl": {
+      "size": 21868,
+      "mtime_ns": 1790111390581036531
+    },
+    "results/scenarios-final/renode-console.log": {
+      "size": 273392,
+      "mtime_ns": 1790111390852402087
+    },
+    "results/scenarios-final/scenario-run.log": {
+      "size": 14269,
+      "mtime_ns": 1790111390075309810
+    },
+    "results/scenarios-final/monitor.log": {
+      "size": 7352,
+      "mtime_ns": 1790111390782504898
+    },
+    "results/scenarios-final/SensorTelemetry.elf": {
+      "size": 617268,
+      "mtime_ns": 1790111335500519433
+    },
+    "results/scenarios-final/size.txt": {
+      "size": 115,
+      "mtime_ns": 1790111335500466816
+    },
+    "results/scenarios-01/validation-summary.json": {
+      "size": 1755,
+      "mtime_ns": 1790111128013561502
+    },
+    "results/scenarios-01/build.log": {
+      "size": 36,
+      "mtime_ns": 1790111081194778772
+    },
+    "results/scenarios-01/sensor-tx.jsonl": {
+      "size": 18323,
+      "mtime_ns": 1790111127694361990
+    },
+    "results/scenarios-01/renode-console.log": {
+      "size": 232998,
+      "mtime_ns": 1790111127963525471
+    },
+    "results/scenarios-01/scenario-run.log": {
+      "size": 11734,
+      "mtime_ns": 1790111127191659601
+    },
+    "results/scenarios-01/monitor.log": {
+      "size": 6168,
+      "mtime_ns": 1790111127896234601
+    },
+    "results/scenarios-01/size.txt": {
+      "size": 115,
+      "mtime_ns": 1790111081198928463
+    },
+    "results/scenarios-02/validation-summary.json": {
+      "size": 1868,
+      "mtime_ns": 1790111294270632190
+    },
+    "results/scenarios-02/build.log": {
+      "size": 1985,
+      "mtime_ns": 1790111247282049203
+    },
+    "results/scenarios-02/sensor-tx.jsonl": {
+      "size": 18323,
+      "mtime_ns": 1790111293951119725
+    },
+    "results/scenarios-02/renode-console.log": {
+      "size": 232618,
+      "mtime_ns": 1790111294225694080
+    },
+    "results/scenarios-02/scenario-run.log": {
+      "size": 11928,
+      "mtime_ns": 1790111293445052920
+    },
+    "results/scenarios-02/monitor.log": {
+      "size": 6168,
+      "mtime_ns": 1790111294151993874
+    },
+    "results/scenarios-02/size.txt": {
+      "size": 115,
+      "mtime_ns": 1790111247284924429
+    }
+  }
+}
