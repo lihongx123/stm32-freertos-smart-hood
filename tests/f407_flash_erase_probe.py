@@ -1,4 +1,8 @@
-"""Quantify Renode erase behavior while exercising the real MCU bootloader."""
+"""Diagnostic post-run Flash snapshot while exercising the MCU bootloader.
+
+Use f407_renode_sector_direct_probe.py for isolated erase acceptance; after
+a successful update the copied image is intentionally no longer erased.
+"""
 import json
 import pathlib
 import runpy
@@ -75,8 +79,6 @@ summary = {'kind': 'renode-production-path-sector-probe',
            'note': '5/7/9 exercised by update; sector 0/4 intentionally protected',
            'sectors': records}
 (run / 'sector-probe-result.json').write_text(json.dumps(summary, indent=2) + '\n')
-(root / 'results/f407_flash_erase_probe.json').write_text(
-    json.dumps({'evidence_directory': str(run), **summary}, indent=2) + '\n')
 print(json.dumps({'evidence_directory': str(run),
                   'renode_return_code': return_code,
                   'sectors': [{key: value for key, value in record.items()

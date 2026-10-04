@@ -78,3 +78,8 @@ summary = {'kind': 'renode-direct-flash-register-sector-probe',
 (run / 'result.json').write_text(json.dumps(summary, indent=2) + '\n')
 print('evidence=' + str(run))
 print(json.dumps(summary, indent=2))
+if test_model and not all(record['pass'] for record in records):
+    raise SystemExit('repository test model failed full-sector erase acceptance')
+if not test_model and ([record['bad_byte_count'] for record in records] !=
+                       [49152, 65536, 0]):
+    raise SystemExit('stock Renode mismatch changed; investigate model version')

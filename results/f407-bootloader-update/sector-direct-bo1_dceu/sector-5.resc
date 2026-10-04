@@ -1,0 +1,12 @@
+using sysbus
+mach create "sector-5"
+machine LoadPlatformDescription @/home/hello/tools/renode/platforms/cpus/stm32f4.repl
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-bo1_dceu/sector-5-before.bin 0x08020000
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-bo1_dceu/sector-5-guard.bin 0x0801FFFC
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-bo1_dceu/sector-5-guard.bin 0x08040000
+sysbus WriteDoubleWord 0x40023C04 0x45670123
+sysbus WriteDoubleWord 0x40023C04 0xCDEF89AB
+sysbus WriteDoubleWord 0x40023C10 0x0000022A
+sysbus WriteDoubleWord 0x40023C10 0x0001022A
+flash DumpBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-bo1_dceu/sector-5-flash.bin
+quit

@@ -124,6 +124,8 @@ transaction semantics are verified by the host model, while MCU
 Flash timing, reset behavior, write protection and physical power-loss
 safety remain unverified.
 
+The Flash investigation in [f407_flash_erase_investigation.md](f407_flash_erase_investigation.md) subsequently confirmed a Renode sector-table mismatch. A repository-local test-only controller corrects the sector 4/5 erase spans. With this model, an isolated whole-sector probe passes for sectors 4, 5 and 9, and the 64-byte MCU update reaches PENDING with Active and Backup markers read back. The stock Renode failure is retained. The production Flash adapter and its full-sector verification were not changed. The full 38,212-byte linked image remains validated in the host lifecycle model; this short Renode run is not a full-size MCU update or physical Flash test.
+
 Separately, `tests/f407_boot_confirm_probe.py` loads a valid PENDING
 record and the linked application, runs the application past the 5-second
 health window, observes `BOOT_CONFIRM` and reads a second committed

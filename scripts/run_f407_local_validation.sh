@@ -63,6 +63,10 @@ cc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined \
   bootloader/boot_image.c bootloader/boot_journal.c bootloader/boot_policy.c \
   -o /tmp/hood-f407-lifecycle-test
 /tmp/hood-f407-lifecycle-test build-f407/SensorTelemetryF407.bin
+cc -std=c11 -Wall -Wextra -Werror -Ibootloader -Itests \
+  tests/boot_flash_sector_probe.c tests/boot_test_flash.c \
+  bootloader/boot_flash_layout.c -o /tmp/hood-f407-flash-sector-probe
+/tmp/hood-f407-flash-sector-probe
 cc -std=c11 -Wall -Wextra -Werror -If407/Inc tests/boot_confirm_test.c \
   f407/boot_confirm_policy.c -o /tmp/hood-f407-confirm-test
 /tmp/hood-f407-confirm-test
@@ -90,6 +94,9 @@ python3 tests/boot_rollback_model.py
 python3 tests/f407_boot_chain_probe.py
 python3 tests/f407_boot_uart_probe.py
 python3 tests/f407_boot_confirm_probe.py
+python3 tests/f407_renode_sector_direct_probe.py
+python3 tests/f407_renode_sector_direct_probe.py --test-model
+python3 tests/f407_boot_update_mcu_probe.py --test-model
 python3 tests/f407_dma_model_probe.py
 python3 tests/f407_motor_task_probe.py
 python3 tests/f407_motor_fault_probe.py
