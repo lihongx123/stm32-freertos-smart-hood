@@ -6,6 +6,7 @@
 #include "semphr.h"
 #include "app_types.h"
 #include "uart_ring.h"
+#include "sensor_acquisition.h"
 enum { TASK_COMM, TASK_SENSOR, TASK_CONTROL, TASK_FAULT, TASK_MONITOR, TASK_COUNT };
 typedef struct {
     SensorData latest;
@@ -24,6 +25,8 @@ void app_log(const char *format, ...);
 void app_beat(unsigned task);
 void CommTask(void *argument);
 void SensorTask(void *argument);
+/* Configure before starting the scheduler; UART remains the default simulator. */
+void sensor_task_set_backend(SensorBackend backend);
 void ControlTask(void *argument);
 void FaultTask(void *argument);
 void MonitorTask(void *argument);

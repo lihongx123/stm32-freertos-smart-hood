@@ -1,0 +1,28 @@
+{
+  "kind": "renode-production-path-sector-probe",
+  "renode_return_code": 0,
+  "note": "5/7/9 exercised by update; sector 0/4 intentionally protected",
+  "sectors": [
+    {
+      "sector": 5,
+      "start": "0x08020000",
+      "size": 131072,
+      "pass": false,
+      "error": "dump missing"
+    },
+    {
+      "sector": 7,
+      "start": "0x08060000",
+      "size": 131072,
+      "pass": false,
+      "error": "dump missing"
+    },
+    {
+      "sector": 9,
+      "start": "0x080A0000",
+      "size": 131072,
+      "pass": false,
+      "error": "dump missing"
+    }
+  ]
+}

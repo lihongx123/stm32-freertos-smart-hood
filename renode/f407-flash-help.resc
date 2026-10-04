@@ -1,0 +1,6 @@
+using sysbus
+mach create "f407-flash-help"
+machine LoadPlatformDescription @platforms/cpus/stm32f4.repl
+flash
+sysbus
+quit

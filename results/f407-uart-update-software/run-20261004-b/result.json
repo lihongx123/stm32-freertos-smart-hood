@@ -1,0 +1,39 @@
+{
+  "kind": "f407-uart-update-local-software-validation",
+  "baseline_commit": "b642d37d489445d450c5945ff02c6fdd4c1d28b4",
+  "result": "PASS",
+  "validation_command": "scripts/run_f407_local_validation.sh",
+  "full_log": "full-validation.log",
+  "full_log_sha256": "3325a5e6e4ad5bdb8dca23a916d1ceeac3ac939fbd58355f4a548183870e16e6",
+  "image": {
+    "path": "build-f407/SensorTelemetryF407.bin",
+    "bytes": 33380,
+    "crc32": "0x66CE5CA8",
+    "sha256": "b72176f1d346e11fe64f6e879e18e9cf8b00326e9e2b1fc4d3acaaa66ab5ef34",
+    "chunks": 131
+  },
+  "protocol_cases": {
+    "normal_transfer_retransmissions": 0,
+    "one_dropped_chunk_ack_retransmissions": 1,
+    "stale_start_ack_ignored": true,
+    "unique_chunk_writes_per_transfer": 131,
+    "finish_calls_per_transfer": 1,
+    "negative_unit_cases": [
+      "bad_wire_crc",
+      "oversized_frame",
+      "conflicting_duplicate_chunk",
+      "missing_or_out_of_order_chunk",
+      "incomplete_end",
+      "timeout",
+      "bad_image_crc",
+      "bad_header",
+      "invalid_reset_vector",
+      "partial_transfer_restart"
+    ]
+  },
+  "c_receiver_freestanding_arm_compile": "PASS",
+  "f407_and_f103_builds": "PASS",
+  "existing_host_and_renode_regressions": "PASS",
+  "git_diff_check": "PASS",
+  "scope": "Python sender and C memory-backed receiver in local software; MCU bootloader remains read-only, with no Flash writer or on-device UART recovery"
+}

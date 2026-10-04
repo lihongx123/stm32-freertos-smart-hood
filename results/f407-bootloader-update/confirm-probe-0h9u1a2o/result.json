@@ -1,0 +1,8 @@
+{
+  "kind": "renode-application-confirmation",
+  "health_window_ms": 5000,
+  "boot_confirm_logged": true,
+  "second_record_state": 1,
+  "result": "PASS",
+  "scope": "application-side software health and Renode metadata append; not physical Flash"
+}

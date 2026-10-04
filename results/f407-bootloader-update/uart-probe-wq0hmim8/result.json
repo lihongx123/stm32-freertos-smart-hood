@@ -1,0 +1,9 @@
+{
+  "kind": "renode-bootloader-uart-header-rejection",
+  "bad_declared_size": 0,
+  "nack_code": 2,
+  "nack_request_type": 1,
+  "flash_write_attempted": false,
+  "result": "PASS",
+  "scope": "bootloader USART1 receive/framing only; no MCU Flash programming"
+}

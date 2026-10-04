@@ -1,0 +1,14 @@
+{
+  "kind": "host-boot-rollback-policy-model",
+  "install_cut_points": 34,
+  "cut_outcomes": {
+    "old": 33,
+    "new": 1
+  },
+  "interrupted_rollback_cases": 11,
+  "interrupted_confirmation_cases": 2,
+  "bad_staging_crc_rejected": true,
+  "pending_attempt_limit": 2,
+  "result": "PASS",
+  "scope": "logical state model only"
+}

@@ -1,0 +1,10 @@
+using sysbus
+mach create "sector-9"
+machine LoadPlatformDescription @/home/hello/tools/renode/platforms/cpus/stm32f4.repl
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-n3r53_kj/sector-9-before.bin 0x080A0000
+sysbus WriteDoubleWord 0x40023C04 0x45670123
+sysbus WriteDoubleWord 0x40023C04 0xCDEF89AB
+sysbus WriteDoubleWord 0x40023C10 0x0000024A
+sysbus WriteDoubleWord 0x40023C10 0x0001024A
+flash DumpBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-n3r53_kj/sector-9-flash.bin
+quit

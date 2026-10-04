@@ -9,7 +9,8 @@ typedef struct {
     uint8_t valid;
 } SensorData;
 enum { FAULT_SENSOR_TIMEOUT=1, FAULT_INVALID=2, FAULT_COMM_TIMEOUT=4,
-       FAULT_QUEUE=8, FAULT_TASK=16 };
+       FAULT_QUEUE=8, FAULT_TASK=16, FAULT_MOTOR_STALL=32,
+       FAULT_HALL_LOSS=64 };
 typedef struct {
     SystemState state;
     FanMode fan;

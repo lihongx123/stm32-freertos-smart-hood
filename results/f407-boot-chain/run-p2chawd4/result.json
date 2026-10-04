@@ -1,0 +1,19 @@
+{
+  "kind": "renode-boot-chain",
+  "app_bytes": 33380,
+  "app_crc32": "0x66CE5CA8",
+  "metadata_state": "CONFIRMED",
+  "app_started": true,
+  "rejected_cases": [
+    "missing-record",
+    "corrupt-app",
+    "corrupt-record"
+  ],
+  "rejected_status_codes": {
+    "missing-record": 2,
+    "corrupt-app": 3,
+    "corrupt-record": 2
+  },
+  "result": "PASS",
+  "scope": "Renode read-only selector; no Flash writes"
+}

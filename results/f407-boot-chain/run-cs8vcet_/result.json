@@ -1,0 +1,9 @@
+{
+  "kind": "renode-boot-chain",
+  "app_bytes": 33380,
+  "app_crc32": "0x66CE5CA8",
+  "metadata_state": "CONFIRMED",
+  "app_started": true,
+  "result": "PASS",
+  "scope": "Renode read-only selector; no Flash writes"
+}

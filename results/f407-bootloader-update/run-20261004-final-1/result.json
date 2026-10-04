@@ -1,0 +1,64 @@
+{
+  "kind": "f407-bootloader-update-phase-validation",
+  "baseline_commit": "b642d37d489445d450c5945ff02c6fdd4c1d28b4",
+  "result": "PARTIAL",
+  "full_regression": {
+    "command": "scripts/run_f407_local_validation.sh",
+    "exit_code": 0,
+    "build_targets_passed": 3,
+    "test_commands_passed": 23,
+    "test_commands_failed": 0,
+    "log": "full-validation.log",
+    "log_sha256": "4a2b4f045be90aabff776026b4d5c08bc5095267a1e47afaf20fb86f4a252566"
+  },
+  "linked_f407_image": {
+    "bytes": 38212,
+    "chunks_at_256_bytes": 150,
+    "sha256": "ca44da96715004806c24ddc1be189a3129efb4e7cb93a687faf337332b9cfada",
+    "application_link_address": "0x08020000",
+    "maximum_image_bytes": 262144,
+    "elf_text_bytes": 38008,
+    "elf_data_bytes": 148,
+    "elf_bss_bytes": 20916
+  },
+  "bootloader": {
+    "sha256": "bfa6f74c7ca19dc0e1bf3aa9f382026fdf34f4a257d24030b25fc67936e3980e",
+    "elf_text_bytes": 8400,
+    "elf_data_bytes": 52,
+    "elf_bss_bytes": 1244
+  },
+  "host_flash_model": {
+    "result": "PASS",
+    "exact_backup_and_active_copy": true,
+    "pending_to_confirmed": true,
+    "two_unconfirmed_boots_then_exact_rollback": true,
+    "staging_power_cut_cases": 5,
+    "activation_power_cut_cases": 15,
+    "rollback_power_cut_cases": 1,
+    "separate_metadata_word_cut_cases": 16
+  },
+  "renode": {
+    "confirmed_boot_jump": "PASS",
+    "uart_bad_header_nack": "PASS",
+    "valid_start_to_staging_ack": "START_ACK_ONLY",
+    "application_health_confirmation": "PASS",
+    "full_mcu_activation": "NOT_VERIFIED",
+    "full_mcu_activation_evidence": "../mcu-update-rre_bg1x/result.json",
+    "full_mcu_activation_failure": {
+      "result_code": 3,
+      "step": "ACTIVE_ERASE",
+      "flash_readback_error_address": "0x08030000",
+      "interpretation": "Renode F407 Flash model does not erase the second half of physical Sector 5; checked backend rejects the incomplete erase"
+    }
+  },
+  "f103_regression": "PASS",
+  "git_diff_check": "PASS",
+  "physical_hardware_validated": false,
+  "limitations": [
+    "3.3 V word-programming supply is a build assumption, not measured",
+    "same-bank Flash erase/program timing and physical power cuts untested",
+    "Renode MCU Flash activation is not a PASS",
+    "metadata journal has no erase/compaction once full",
+    "CRC32 is not firmware authentication"
+  ]
+}

@@ -1,0 +1,9 @@
+using sysbus
+mach create "smart-hood-f407"
+machine LoadPlatformDescription @platforms/cpus/stm32f4.repl
+nvic Frequency 168000000
+sysbus LoadELF @build-f407/SensorTelemetryF407.elf
+usart1 CreateFileBackend @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-renode-smoke.log
+emulation RunFor "2"
+cpu PC
+quit

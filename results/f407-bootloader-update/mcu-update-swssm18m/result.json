@@ -1,0 +1,45 @@
+{
+  "kind": "renode-mcu-update-diagnostic",
+  "flash_model": "repository-test-only-f407-geometry",
+  "renode_return_code": 0,
+  "uart_frames": [
+    {
+      "type": 128,
+      "sequence": 0,
+      "payload_hex": "0001"
+    },
+    {
+      "type": 128,
+      "sequence": 0,
+      "payload_hex": "0002"
+    },
+    {
+      "type": 128,
+      "sequence": 1,
+      "payload_hex": "0003"
+    },
+    {
+      "type": 130,
+      "sequence": 1,
+      "payload_hex": "00080000000000"
+    }
+  ],
+  "memory_words": [
+    "0x20020000",
+    "0x20020000",
+    "0x55667788",
+    "0x20020000",
+    "0x11223344",
+    "0x00000003"
+  ],
+  "expected_active_word": "0x55667788",
+  "expected_backup_word": "0x11223344",
+  "scope": "64-byte executable loop images in Renode; not physical Flash",
+  "activation_diagnostic": {
+    "result_code": 0,
+    "step_code": 8,
+    "flash_error_code": 0,
+    "flash_error_address": "0x00000000"
+  },
+  "result": "PASS"
+}

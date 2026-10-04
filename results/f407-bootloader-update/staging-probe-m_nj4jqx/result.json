@@ -1,0 +1,11 @@
+{
+  "kind": "renode-staging-start-diagnostic",
+  "renode_return_code": 0,
+  "response": {
+    "type": 128,
+    "sequence": 0,
+    "payload_hex": "0001"
+  },
+  "flash_programming_claim": false,
+  "result": "START_ACK_ONLY"
+}

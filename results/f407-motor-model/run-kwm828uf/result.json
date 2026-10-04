@@ -1,0 +1,66 @@
+{
+  "kind": "host-motor-model",
+  "dt_seconds": 0.02,
+  "max_rpm": 3000.0,
+  "time_constant_seconds": 0.3,
+  "pid_source_sha256": "44c29ac135f8e330413b9afc89095bfea2d53a4405ab812c68bab5f1b0a28a1a",
+  "scenarios": [
+    {
+      "scenario": "start-from-zero",
+      "target_rpm": 900,
+      "end_rpm": 884.2,
+      "end_duty": 0.296,
+      "peak_duty": 0.324,
+      "saturation_count": 0
+    },
+    {
+      "scenario": "low-to-high",
+      "target_rpm": 1800,
+      "end_rpm": 1783.6,
+      "end_duty": 0.5958,
+      "peak_duty": 0.62,
+      "saturation_count": 0
+    },
+    {
+      "scenario": "high-to-low",
+      "target_rpm": 900,
+      "end_rpm": 915.2,
+      "end_duty": 0.3039,
+      "peak_duty": 0.3647,
+      "saturation_count": 0
+    },
+    {
+      "scenario": "load-disturbance",
+      "target_rpm": 900,
+      "end_rpm": 887.7,
+      "end_duty": 0.4238,
+      "peak_duty": 0.4238,
+      "saturation_count": 0
+    },
+    {
+      "scenario": "motor-stall-feedback-lost",
+      "target_rpm": 900,
+      "end_rpm": 28.2,
+      "end_duty": 0.0,
+      "peak_duty": 0.0,
+      "saturation_count": 0
+    },
+    {
+      "scenario": "recovery",
+      "target_rpm": 900,
+      "end_rpm": 884.0,
+      "end_duty": 0.2959,
+      "peak_duty": 0.3139,
+      "saturation_count": 0
+    },
+    {
+      "scenario": "safe-off",
+      "target_rpm": 0,
+      "end_rpm": 28.1,
+      "end_duty": 0.0,
+      "peak_duty": 0.0,
+      "saturation_count": 0
+    }
+  ],
+  "result": "PASS"
+}

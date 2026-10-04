@@ -1,0 +1,11 @@
+using sysbus
+mach create "f407-app-confirm"
+machine LoadPlatformDescription @platforms/cpus/stm32f4.repl
+nvic Frequency 168000000
+sysbus LoadELF @/home/hello/projects/smart-hood-baseline/SensorTelemetry/build-f407/SensorTelemetryF407.elf
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/confirm-probe-rdobris3/backup.bin 0x08060000
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/confirm-probe-rdobris3/pending-sector.bin 0x08010000
+usart1 CreateFileBackend @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/confirm-probe-rdobris3/app-uart.log
+emulation RunFor "7"
+sysbus ReadDoubleWord 0x0801004C
+quit

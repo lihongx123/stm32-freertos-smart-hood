@@ -1,0 +1,11 @@
+include @/home/hello/projects/smart-hood-baseline/SensorTelemetry/renode/HoodSTM32F407Flash.cs
+using sysbus
+mach create "sector-5"
+machine LoadPlatformDescription @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-cg0_p4f2/f407-test-flash.repl
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-cg0_p4f2/sector-5-before.bin 0x08020000
+sysbus WriteDoubleWord 0x40023C04 0x45670123
+sysbus WriteDoubleWord 0x40023C04 0xCDEF89AB
+sysbus WriteDoubleWord 0x40023C10 0x0000022A
+sysbus WriteDoubleWord 0x40023C10 0x0001022A
+flash DumpBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/sector-direct-cg0_p4f2/sector-5-flash.bin
+quit

@@ -1,0 +1,40 @@
+{
+  "kind": "renode-direct-flash-register-sector-probe",
+  "model": "stock-renode",
+  "method": "FLASH_KEYR unlock, CR SER/SNB/PSIZE/STRT; no CPU firmware",
+  "sectors": [
+    {
+      "sector": 4,
+      "start": "0x08010000",
+      "size": 65536,
+      "expected_erased_bytes": 65536,
+      "actual_erased_bytes": 16384,
+      "first_bad_address": "0x08014000",
+      "last_bad_address": "0x0801FFFF",
+      "bad_byte_count": 49152,
+      "pass": false
+    },
+    {
+      "sector": 5,
+      "start": "0x08020000",
+      "size": 131072,
+      "expected_erased_bytes": 131072,
+      "actual_erased_bytes": 65536,
+      "first_bad_address": "0x08030000",
+      "last_bad_address": "0x0803FFFF",
+      "bad_byte_count": 65536,
+      "pass": false
+    },
+    {
+      "sector": 9,
+      "start": "0x080A0000",
+      "size": 131072,
+      "expected_erased_bytes": 131072,
+      "actual_erased_bytes": 131072,
+      "first_bad_address": null,
+      "last_bad_address": null,
+      "bad_byte_count": 0,
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+BOOT
+RTOS_START
+COMM_READY
+STATE,INIT
+HEARTBEAT seq=1,tick=0
+RXDMA,events=0,bytes=0,errors=0,fallback=0
+METRIC,uart_rx_bytes=0,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=2168,stack_comm=206,stack_sensor=220,stack_control=228,stack_fault=224,stack_monitor=312
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+HEARTBEAT seq=2,tick=1000
+RXDMA,events=0,bytes=0,errors=0,fallback=0
+METRIC,uart_rx_bytes=0,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=2168,stack_comm=206,stack_sensor=220,stack_control=228,stack_fault=224,stack_monitor=312
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+HEARTBEAT seq=3,tick=2000
+RXDMA,events=1,bytes=3,errors=0,fallback=0
+METRIC,uart_rx_bytes=3,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=2168,stack_comm=206,stack_sensor=220,stack_control=228,stack_fault=224,stack_monitor=312
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+FAULT,mask=5
+STATE,FAULT,tick=2200
+FAN,BOOST
+HEARTBEAT seq=4,tick=3000
+RXDMA,events=1,bytes=3,errors=0,fallback=0
+METRIC,uart_rx_bytes=3,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=2168,stack_comm=206,stack_sensor=220,stack_control=206,stack_fault=94,stack_monitor=312
+STATUS,state=3,fan=4,light=0,state_transition_count=1,fault_count=1,fault_mask=5

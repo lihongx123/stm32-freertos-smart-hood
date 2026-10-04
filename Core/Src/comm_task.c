@@ -5,6 +5,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <errno.h>
+#ifdef STM32F407xx
+#include "motor_sim_task.h"
+#endif
 extern UART_HandleTypeDef huart1;
 #if APP_UART_RX_IT_FALLBACK
 static uint8_t rx_byte;
@@ -127,6 +130,23 @@ void CommTask(void *argument)
                 app_log("TEST_STALL,task=%u,ms=%u",task,ms);
                 length=0; app_beat(TASK_COMM); continue;
             }
+#ifdef STM32F407xx
+            unsigned enabled;
+            consumed = 0;
+            if (!discard && sscanf(frame,"M,STALL,%u%n",&enabled,&consumed)==1 &&
+                frame[consumed]==0 && enabled<=1) {
+                motor_sim_set_fault(MOTOR_SIM_STALL, enabled != 0);
+                app_log("TEST_MOTOR_STALL,%u",enabled);
+                length=0; continue;
+            }
+            consumed = 0;
+            if (!discard && sscanf(frame,"M,HALL_LOSS,%u%n",&enabled,&consumed)==1 &&
+                frame[consumed]==0 && enabled<=1) {
+                motor_sim_set_fault(MOTOR_SIM_HALL_LOSS, enabled != 0);
+                app_log("TEST_HALL_LOSS,%u",enabled);
+                length=0; continue;
+            }
+#endif
 #endif
             SensorData data={0};
             const int valid=!discard && sensor_frame_parse(frame,&data);

@@ -1,0 +1,35 @@
+{
+  "kind": "renode-mcu-update-diagnostic",
+  "renode_return_code": 0,
+  "uart_frames": [
+    {
+      "type": 128,
+      "sequence": 0,
+      "payload_hex": "0001"
+    },
+    {
+      "type": 128,
+      "sequence": 0,
+      "payload_hex": "0002"
+    },
+    {
+      "type": 128,
+      "sequence": 1,
+      "payload_hex": "0003"
+    },
+    {
+      "type": 130,
+      "sequence": 1,
+      "payload_hex": "04"
+    }
+  ],
+  "memory_words": [
+    "0x11223344",
+    "0x00000000",
+    "0x00000000"
+  ],
+  "expected_active_word": "0x55667788",
+  "expected_backup_word": "0x11223344",
+  "scope": "64-byte executable loop images in Renode; not physical Flash",
+  "result": "NOT_VERIFIED"
+}

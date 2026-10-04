@@ -1,0 +1,11 @@
+using sysbus
+mach create "f407-corrupt-record"
+machine LoadPlatformDescription @platforms/cpus/stm32f4.repl
+nvic Frequency 168000000
+sysbus LoadELF @/home/hello/projects/smart-hood-baseline/SensorTelemetry/build-f407/SensorTelemetryF407.elf
+sysbus LoadBinary @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-boot-chain/run-tqtrok28/corrupt-record.bin 0x08010000
+sysbus LoadELF @/home/hello/projects/smart-hood-baseline/SensorTelemetry/build-boot-f407/HoodBootF407.elf
+usart1 CreateFileBackend @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-boot-chain/run-tqtrok28/corrupt-record-uart.log
+emulation RunFor "0.3"
+sysbus ReadDoubleWord 0x200000F8
+quit
