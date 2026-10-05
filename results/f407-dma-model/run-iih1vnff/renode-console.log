@@ -1,0 +1,163 @@
+[01:11:21.8761] [INFO] Loaded monitor commands from: /home/hello/tools/renode/scripts/monitor.py
+[0mRenode, version 1.17.0 (1.17.0+20260922gitd6193cf47)
+
+
+[91m(monitor) [0mi @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f4 
+07-dma-model/run-iih1vnff/probe.resc
+
+[01:11:21.9476] [INFO] Including script(s): /home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-dma-model/run-iih1vnff/probe.resc
+[01:11:22.7485] [INFO] System bus created.
+[01:11:23.0619] [INFO] SynopsysEthernetMAC: Bus width not specified, defaulting to Bits32
+[01:11:23.2601] [INFO] sysbus: Loaded SVD: /tmp/renode-1028523/a540c78d-2bba-440f-be5f-a3fa20975d7d.tmp. Name: STM32F40x. Description: STM32F40x.
+[01:11:23.2949] [INFO] sysbus: Loading block of 38064 bytes length at 0x8020000.
+[01:11:23.3002] [INFO] sysbus: Loading block of 148 bytes length at 0x80294B0.
+[01:11:23.3003] [INFO] sysbus: Loading block of 20916 bytes length at 0x20000094.
+[01:11:23.3962] [INFO] cpu: Guessing VectorTableOffset value to be 0x8020000.
+[01:11:23.4023] [INFO] cpu: Setting initial values: PC = 0x8028D8D, SP = 0x20020000.
+[01:11:23.4034] [INFO] f407-dma-model: Machine started.
+[01:11:23.4244] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [9] when writing value 0x200. Tags: ICEN (0x1).
+[01:11:23.4252] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [10] when writing value 0x400. Tags: DCEN (0x1).
+[01:11:23.4253] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [8] when writing value 0x100. Tags: PRFTEN (0x1).
+[01:11:23.4315] [WARNING] rcc: Unhandled write to offset 0x74. Unhandled bits: [24] when writing value 0xF000000. Tags: RMVF (0x1).
+[01:11:23.4330] [WARNING] rcc: Unhandled write to offset 0x4. Unhandled bits: [29] when writing value 0x7005410. Tags: RESERVED (0x0).
+[01:11:23.4400] [WARNING] nvic: Trying to set the priority for interrupt 16 to 0xFF, but it should be maskable with 0xF0
+[01:11:23.4410] [WARNING] usart1: Unhandled write to offset 0x14. Unhandled bits: [0] when writing value 0x1. Tags: EIE (0x1).
+[01:11:24.4054] [INFO] f407-dma-model: Machine paused.
+0x00000100
+
+[01:11:24.4555] [INFO] f407-dma-model: Machine resumed.
+[01:11:26.4549] [INFO] f407-dma-model: Machine paused.
+0x000000FC
+
+0x44434241
+
+0x07060504
+
+0x0B0A0908
+
+0x0F0E0D0C
+
+0x13121110
+
+0x17161514
+
+0x1B1A1918
+
+0x1F1E1D1C
+
+0x23222120
+
+0x27262524
+
+0x2B2A2928
+
+0x2F2E2D2C
+
+0x33323130
+
+0x37363534
+
+0x3B3A3938
+
+0x3F3E3D3C
+
+0x43424140
+
+0x47464544
+
+0x4B4A4948
+
+0x4F4E4D4C
+
+0x53525150
+
+0x57565554
+
+0x5B5A5958
+
+0x5F5E5D5C
+
+0x63626160
+
+0x67666564
+
+0x6B6A6968
+
+0x6F6E6D6C
+
+0x73727170
+
+0x77767574
+
+0x7B7A7978
+
+0x7F7E7D7C
+
+0x83828180
+
+0x87868584
+
+0x8B8A8988
+
+0x8F8E8D8C
+
+0x93929190
+
+0x97969594
+
+0x9B9A9998
+
+0x9F9E9D9C
+
+0xA3A2A1A0
+
+0xA7A6A5A4
+
+0xABAAA9A8
+
+0xAFAEADAC
+
+0xB3B2B1B0
+
+0xB7B6B5B4
+
+0xBBBAB9B8
+
+0xBFBEBDBC
+
+0xC3C2C1C0
+
+0xC7C6C5C4
+
+0xCBCAC9C8
+
+0xCFCECDCC
+
+0xD3D2D1D0
+
+0xD7D6D5D4
+
+0xDBDAD9D8
+
+0xDFDEDDDC
+
+0xE3E2E1E0
+
+0xE7E6E5E4
+
+0xEBEAE9E8
+
+0xEFEEEDEC
+
+0xF3F2F1F0
+
+0xF7F6F5F4
+
+0xFBFAF9F8
+
+0xFFFEFDFC
+
+[92mR[0m[92me[0m[92mn[0m[92mo[0m[92md[0m[92me[0m[92m [0m[92mi[0m[92ms[0m[92m [0m[92mq[0m[92mu[0m[92mi[0m[92mt[0m[92mt[0m[92mi[0m[92mn[0m[92mg[0m[92m
+[0m[92m
+[0m[92m
+[0m[0m[0m[01:11:26.4935] [INFO] f407-dma-model: Disposed.

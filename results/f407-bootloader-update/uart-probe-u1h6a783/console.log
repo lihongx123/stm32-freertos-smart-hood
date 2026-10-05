@@ -1,0 +1,101 @@
+[01:10:53.5142] [INFO] Loaded monitor commands from: /home/hello/tools/renode/scripts/monitor.py
+[0mRenode, version 1.17.0 (1.17.0+20260922gitd6193cf47)
+
+
+[91m(monitor) [0mi @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f4 
+07-bootloader-update/uart-probe-u1h6a783/boot-uart.resc
+
+[01:10:53.5860] [INFO] Including script(s): /home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/uart-probe-u1h6a783/boot-uart.resc
+[01:10:53.5935] [INFO] System bus created.
+[01:10:53.9209] [INFO] SynopsysEthernetMAC: Bus width not specified, defaulting to Bits32
+[01:10:54.1193] [INFO] sysbus: Loaded SVD: /tmp/renode-1028145/1b561fe9-a319-4936-b433-5df28e9c5cb8.tmp. Name: STM32F40x. Description: STM32F40x.
+[01:10:54.1664] [INFO] sysbus: Loading block of 38064 bytes length at 0x8020000.
+[01:10:54.1718] [INFO] sysbus: Loading block of 148 bytes length at 0x80294B0.
+[01:10:54.1719] [INFO] sysbus: Loading block of 20916 bytes length at 0x20000094.
+[01:10:54.1833] [INFO] sysbus: Loading block of 64 bytes length at 0x8010000.
+[01:10:54.1846] [INFO] sysbus: Loading block of 8408 bytes length at 0x8000000.
+[01:10:54.1846] [INFO] sysbus: Loading block of 264 bytes length at 0x80020D8.
+[01:10:54.1846] [INFO] sysbus: Loading block of 1024 bytes length at 0x8002104.
+[01:10:54.2632] [INFO] cpu: Guessing VectorTableOffset value to be 0x8000000.
+[01:10:54.2705] [INFO] cpu: Setting initial values: PC = 0x8001D4D, SP = 0x20020000.
+[01:10:54.2716] [INFO] f407-boot-uart: Machine started.
+[01:10:54.2986] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [9] when writing value 0x200. Tags: ICEN (0x1).
+[01:10:54.2994] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [10] when writing value 0x400. Tags: DCEN (0x1).
+[01:10:54.2995] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [8] when writing value 0x100. Tags: PRFTEN (0x1).
+[01:10:54.4586] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.4632] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.4746] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.4751] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.4859] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.4864] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.4965] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.4970] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5069] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5074] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5177] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5183] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5284] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5290] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5392] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5396] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5499] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5504] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5606] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5611] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5713] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5719] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5823] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5828] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.5938] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.5945] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6043] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6049] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6155] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6161] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6266] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6272] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6374] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6380] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6486] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6492] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6589] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6595] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6695] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6700] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.6908] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.6915] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7024] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7029] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7137] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7143] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7255] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7261] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7369] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7376] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7497] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7503] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7614] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7620] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7727] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7732] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7841] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.7846] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.7996] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8002] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.8130] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8136] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.8264] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8270] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.8401] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8407] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.8531] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8536] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.8669] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8675] [INFO] f407-boot-uart: Machine resumed.
+[01:10:54.8803] [INFO] f407-boot-uart: Machine paused.
+[01:10:54.8807] [INFO] f407-boot-uart: Machine resumed.
+[01:10:55.6600] [INFO] f407-boot-uart: Machine paused.
+[92mR[0m[92me[0m[92mn[0m[92mo[0m[92md[0m[92me[0m[92m [0m[92mi[0m[92ms[0m[92m [0m[92mq[0m[92mu[0m[92mi[0m[92mt[0m[92mt[0m[92mi[0m[92mn[0m[92mg[0m[92m
+[0m[92m
+[0m[92m
+[0m[0m[0m[01:10:55.6832] [INFO] f407-boot-uart: Disposed.

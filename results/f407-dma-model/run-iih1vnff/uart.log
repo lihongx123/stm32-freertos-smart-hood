@@ -1,0 +1,31 @@
+BOOT
+RESET,raw=0x0E000000,flags=7
+RTOS_START
+COMM_READY
+STATE,INIT
+MOTOR_SIM_READY
+HEARTBEAT seq=1,tick=0
+RXDMA,events=0,bytes=0,errors=0,fallback=0
+METRIC,uart_rx_bytes=0,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=206,stack_sensor=212,stack_control=228,stack_fault=214,stack_monitor=296
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+MOTOR,SIM,target_rpm=0,actual_rpm=0,hall_rpm=0,hall_edges=0,duty_permyriad=0,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=1,skipped=0,missing_tasks=0
+HEARTBEAT seq=2,tick=1000
+RXDMA,events=0,bytes=0,errors=0,fallback=0
+METRIC,uart_rx_bytes=0,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=206,stack_sensor=212,stack_control=228,stack_fault=214,stack_monitor=296
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+MOTOR,SIM,target_rpm=0,actual_rpm=0,hall_rpm=0,hall_edges=0,duty_permyriad=0,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=5,skipped=0,missing_tasks=0
+FAULT,mask=2
+STATE,FAULT,tick=1300
+FAN,BOOST
+HEARTBEAT seq=3,tick=2000
+RXDMA,events=3,bytes=260,errors=0,fallback=0
+METRIC,uart_rx_bytes=260,frame_ok=0,frame_error=1,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=206,stack_sensor=212,stack_control=206,stack_fault=84,stack_monitor=296
+STATUS,state=3,fan=4,light=0,state_transition_count=1,fault_count=1,fault_mask=2
+MOTOR,SIM,target_rpm=2400,actual_rpm=1767,hall_rpm=1761,hall_edges=32,duty_permyriad=6427,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=9,skipped=0,missing_tasks=0
+FAULT,mask=3

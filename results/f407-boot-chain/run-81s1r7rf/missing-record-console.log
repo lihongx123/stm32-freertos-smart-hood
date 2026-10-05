@@ -1,0 +1,30 @@
+[01:10:47.5616] [INFO] Loaded monitor commands from: /home/hello/tools/renode/scripts/monitor.py
+[0mRenode, version 1.17.0 (1.17.0+20260922gitd6193cf47)
+
+
+[91m(monitor) [0mi @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f4 
+07-boot-chain/run-81s1r7rf/missing-record.resc
+
+[01:10:47.6384] [INFO] Including script(s): /home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-boot-chain/run-81s1r7rf/missing-record.resc
+[01:10:47.6470] [INFO] System bus created.
+[01:10:47.9685] [INFO] SynopsysEthernetMAC: Bus width not specified, defaulting to Bits32
+[01:10:48.1615] [INFO] sysbus: Loaded SVD: /tmp/renode-1028081/5ebb93c6-eec4-453d-9759-1589f0e223fc.tmp. Name: STM32F40x. Description: STM32F40x.
+[01:10:48.2073] [INFO] sysbus: Loading block of 38064 bytes length at 0x8020000.
+[01:10:48.2124] [INFO] sysbus: Loading block of 148 bytes length at 0x80294B0.
+[01:10:48.2125] [INFO] sysbus: Loading block of 20916 bytes length at 0x20000094.
+[01:10:48.2224] [INFO] sysbus: Loading block of 8408 bytes length at 0x8000000.
+[01:10:48.2225] [INFO] sysbus: Loading block of 264 bytes length at 0x80020D8.
+[01:10:48.2225] [INFO] sysbus: Loading block of 1024 bytes length at 0x8002104.
+[01:10:48.2997] [INFO] cpu: Guessing VectorTableOffset value to be 0x8000000.
+[01:10:48.3062] [INFO] cpu: Setting initial values: PC = 0x8001D4D, SP = 0x20020000.
+[01:10:48.3072] [INFO] f407-missing-record: Machine started.
+[01:10:48.3344] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [9] when writing value 0x200. Tags: ICEN (0x1).
+[01:10:48.3352] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [10] when writing value 0x400. Tags: DCEN (0x1).
+[01:10:48.3352] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [8] when writing value 0x100. Tags: PRFTEN (0x1).
+[01:10:48.6087] [INFO] f407-missing-record: Machine paused.
+0x00000002
+
+[92mR[0m[92me[0m[92mn[0m[92mo[0m[92md[0m[92me[0m[92m [0m[92mi[0m[92ms[0m[92m [0m[92mq[0m[92mu[0m[92mi[0m[92mt[0m[92mt[0m[92mi[0m[92mn[0m[92mg[0m[92m
+[0m[92m
+[0m[92m
+[0m[0m[0m

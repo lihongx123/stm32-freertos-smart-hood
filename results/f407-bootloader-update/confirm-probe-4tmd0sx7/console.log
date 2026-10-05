@@ -1,0 +1,70 @@
+[01:10:56.5833] [INFO] Loaded monitor commands from: /home/hello/tools/renode/scripts/monitor.py
+[0mRenode, version 1.17.0 (1.17.0+20260922gitd6193cf47)
+
+
+[91m(monitor) [0mi @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f4 
+07-bootloader-update/confirm-probe-4tmd0sx7/confirm.resc
+
+[01:10:56.6602] [INFO] Including script(s): /home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-bootloader-update/confirm-probe-4tmd0sx7/confirm.resc
+[01:10:56.6682] [INFO] System bus created.
+[01:10:56.9996] [INFO] SynopsysEthernetMAC: Bus width not specified, defaulting to Bits32
+[01:10:57.2067] [INFO] sysbus: Loaded SVD: /tmp/renode-1028203/2a81b2bf-31fc-4dad-8b6f-215fb46cae1c.tmp. Name: STM32F40x. Description: STM32F40x.
+[01:10:57.2550] [INFO] sysbus: Loading block of 38064 bytes length at 0x8020000.
+[01:10:57.2608] [INFO] sysbus: Loading block of 148 bytes length at 0x80294B0.
+[01:10:57.2609] [INFO] sysbus: Loading block of 20916 bytes length at 0x20000094.
+[01:10:57.2724] [INFO] sysbus: Loading block of 38212 bytes length at 0x8060000.
+[01:10:57.2734] [INFO] sysbus: Loading block of 65536 bytes length at 0x8010000.
+[01:10:57.3498] [INFO] cpu: Guessing VectorTableOffset value to be 0x8020000.
+[01:10:57.3562] [INFO] cpu: Setting initial values: PC = 0x8028D8D, SP = 0x20020000.
+[01:10:57.3572] [INFO] f407-app-confirm: Machine started.
+[01:10:57.3851] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [9] when writing value 0x200. Tags: ICEN (0x1).
+[01:10:57.3859] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [10] when writing value 0x400. Tags: DCEN (0x1).
+[01:10:57.3859] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [8] when writing value 0x100. Tags: PRFTEN (0x1).
+[01:10:57.3921] [WARNING] rcc: Unhandled write to offset 0x74. Unhandled bits: [24] when writing value 0xF000000. Tags: RMVF (0x1).
+[01:10:57.3938] [WARNING] rcc: Unhandled write to offset 0x4. Unhandled bits: [29] when writing value 0x7005410. Tags: RESERVED (0x0).
+[01:10:57.3967] [WARNING] dma2: Unhandled write to offset 0x40. Unhandled bits: [8, 17, 27] when writing value 0x8020500. Tags: CIRC (0x1), PL (0x2), RESERVED (0x4).
+[01:10:57.3971] [WARNING] dma2: Unhandled write to offset 0x8. Unhandled bits: [16-20] when writing value 0x3F0000. Tags: CFEIF2 (0x1), RESERVED (0x1), CDMEIF2 (0x1), CTEIF2 (0x1), CHTIF2 (0x1).
+[01:10:57.4009] [WARNING] nvic: Trying to set the priority for interrupt 16 to 0xFF, but it should be maskable with 0xF0
+[01:10:57.4017] [WARNING] dma2: Unhandled write to offset 0x8. Unhandled bits: [16-20] when writing value 0x3F0000. Tags: CFEIF2 (0x1), RESERVED (0x1), CDMEIF2 (0x1), CTEIF2 (0x1), CHTIF2 (0x1).
+[01:10:57.4017] [WARNING] dma2: Unhandled write to offset 0x40. Unhandled bits: [1-2] when writing value 0x416. Tags: DMEIE (0x1), TEIE (0x1).
+[01:10:57.4017] [WARNING] dma2: Unhandled write to offset 0x40. Unhandled bits: [3] when writing value 0x418. Tags: HTIE (0x1).
+[01:10:57.4023] [WARNING] usart1: Unhandled write to offset 0x14. Unhandled bits: [0] when writing value 0x1. Tags: EIE (0x1).
+[01:11:02.4026] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4027] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4028] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4029] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4030] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4030] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4030] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4030] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4030] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4030] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4031] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4032] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:02.4032] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [9] when writing value 0x200. Tags: PSIZE (0x2).
+[01:11:02.4032] [WARNING] flash_controller: Unhandled write to offset 0x10. Unhandled bits: [0] when writing value 0x1. Tags: PG (0x1).
+[01:11:04.3587] [INFO] f407-app-confirm: Machine paused.
+0x00000001
+
+[92mR[0m[92me[0m[92mn[0m[92mo[0m[92md[0m[92me[0m[92m [0m[92mi[0m[92ms[0m[92m [0m[92mq[0m[92mu[0m[92mi[0m[92mt[0m[92mt[0m[92mi[0m[92mn[0m[92mg[0m[92m
+[0m[92m
+[0m[92m
+[0m[0m[0m[01:11:04.3836] [INFO] f407-app-confirm: Disposed.

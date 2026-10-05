@@ -1,0 +1,56 @@
+BOOT
+RESET,raw=0x0E000000,flags=7
+RTOS_START
+COMM_READY
+STATE,INIT
+MOTOR_SIM_READY
+HEARTBEAT seq=1,tick=0
+RXDMA,events=0,bytes=0,errors=0,fallback=0
+METRIC,uart_rx_bytes=0,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=206,stack_sensor=212,stack_control=228,stack_fault=214,stack_monitor=296
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+MOTOR,SIM,target_rpm=0,actual_rpm=0,hall_rpm=0,hall_edges=0,duty_permyriad=0,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=1,skipped=0,missing_tasks=0
+HEARTBEAT seq=2,tick=1000
+RXDMA,events=0,bytes=0,errors=0,fallback=0
+METRIC,uart_rx_bytes=0,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=206,stack_sensor=212,stack_control=228,stack_fault=214,stack_monitor=296
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+MOTOR,SIM,target_rpm=0,actual_rpm=0,hall_rpm=0,hall_edges=0,duty_permyriad=0,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=5,skipped=0,missing_tasks=0
+TEST_STALL,task=1,ms=2500
+HEARTBEAT seq=3,tick=2000
+RXDMA,events=1,bytes=9,errors=0,fallback=0
+METRIC,uart_rx_bytes=9,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=106,stack_sensor=212,stack_control=228,stack_fault=214,stack_monitor=296
+STATUS,state=0,fan=0,light=0,state_transition_count=0,fault_count=0,fault_mask=0
+MOTOR,SIM,target_rpm=0,actual_rpm=0,hall_rpm=0,hall_edges=0,duty_permyriad=0,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=9,skipped=0,missing_tasks=0
+FAULT,mask=5
+STATE,FAULT,tick=2200
+FAN,BOOST
+HEALTH,stalled=2
+FAULT,mask=21
+HEARTBEAT seq=4,tick=3000
+RXDMA,events=1,bytes=9,errors=0,fallback=0
+METRIC,uart_rx_bytes=9,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=106,stack_sensor=212,stack_control=206,stack_fault=84,stack_monitor=296
+STATUS,state=3,fan=4,light=0,state_transition_count=1,fault_count=1,fault_mask=21
+MOTOR,SIM,target_rpm=2400,actual_rpm=1819,hall_rpm=1813,hall_edges=38,duty_permyriad=6542,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=11,skipped=2,missing_tasks=2
+HEALTH,stalled=0
+FAULT,mask=5
+HEARTBEAT seq=5,tick=4000
+RXDMA,events=1,bytes=9,errors=0,fallback=0
+METRIC,uart_rx_bytes=9,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=106,stack_sensor=212,stack_control=206,stack_fault=84,stack_monitor=296
+STATUS,state=3,fan=4,light=0,state_transition_count=1,fault_count=1,fault_mask=5
+MOTOR,SIM,target_rpm=2400,actual_rpm=2147,hall_rpm=2142,hall_edges=104,duty_permyriad=7355,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=13,skipped=4,missing_tasks=0
+HEARTBEAT seq=6,tick=5000
+RXDMA,events=1,bytes=9,errors=0,fallback=0
+METRIC,uart_rx_bytes=9,frame_ok=0,frame_error=0,ring_overflow=0,queue_drop=0
+MEM,free_heap=4616,stack_comm=106,stack_sensor=212,stack_control=206,stack_fault=84,stack_monitor=296
+STATUS,state=3,fan=4,light=0,state_transition_count=1,fault_count=1,fault_mask=5
+MOTOR,SIM,target_rpm=2400,actual_rpm=2290,hall_rpm=2288,hall_edges=179,duty_permyriad=7719,pid_saturation=0,fault_mask=0,stall_events=0,feedback_loss_events=0
+WATCHDOG,SIM,eligible=17,skipped=4,missing_tasks=0

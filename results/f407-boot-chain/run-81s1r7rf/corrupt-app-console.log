@@ -1,0 +1,32 @@
+[01:10:49.5514] [INFO] Loaded monitor commands from: /home/hello/tools/renode/scripts/monitor.py
+[0mRenode, version 1.17.0 (1.17.0+20260922gitd6193cf47)
+
+
+[91m(monitor) [0mi @/home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f4 
+07-boot-chain/run-81s1r7rf/corrupt-app.resc
+
+[01:10:49.6253] [INFO] Including script(s): /home/hello/projects/smart-hood-baseline/SensorTelemetry/results/f407-boot-chain/run-81s1r7rf/corrupt-app.resc
+[01:10:49.6332] [INFO] System bus created.
+[01:10:49.9495] [INFO] SynopsysEthernetMAC: Bus width not specified, defaulting to Bits32
+[01:10:50.1433] [INFO] sysbus: Loaded SVD: /tmp/renode-1028102/f5564ae1-608d-42f3-b006-7efd5dc9e396.tmp. Name: STM32F40x. Description: STM32F40x.
+[01:10:50.1880] [INFO] sysbus: Loading block of 38064 bytes length at 0x8020000.
+[01:10:50.1932] [INFO] sysbus: Loading block of 148 bytes length at 0x80294B0.
+[01:10:50.1933] [INFO] sysbus: Loading block of 20916 bytes length at 0x20000094.
+[01:10:50.2056] [INFO] sysbus: Loading block of 64 bytes length at 0x8010000.
+[01:10:50.2065] [INFO] sysbus: Loading block of 38212 bytes length at 0x8020000.
+[01:10:50.2072] [INFO] sysbus: Loading block of 8408 bytes length at 0x8000000.
+[01:10:50.2072] [INFO] sysbus: Loading block of 264 bytes length at 0x80020D8.
+[01:10:50.2072] [INFO] sysbus: Loading block of 1024 bytes length at 0x8002104.
+[01:10:50.2861] [INFO] cpu: Guessing VectorTableOffset value to be 0x8000000.
+[01:10:50.2925] [INFO] cpu: Setting initial values: PC = 0x8001D4D, SP = 0x20020000.
+[01:10:50.2935] [INFO] f407-corrupt-app: Machine started.
+[01:10:50.3196] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [9] when writing value 0x200. Tags: ICEN (0x1).
+[01:10:50.3204] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [10] when writing value 0x400. Tags: DCEN (0x1).
+[01:10:50.3205] [WARNING] flash_controller: Unhandled write to offset 0x0. Unhandled bits: [8] when writing value 0x100. Tags: PRFTEN (0x1).
+[01:10:50.5951] [INFO] f407-corrupt-app: Machine paused.
+0x00000003
+
+[92mR[0m[92me[0m[92mn[0m[92mo[0m[92md[0m[92me[0m[92m [0m[92mi[0m[92ms[0m[92m [0m[92mq[0m[92mu[0m[92mi[0m[92mt[0m[92mt[0m[92mi[0m[92mn[0m[92mg[0m[92m
+[0m[92m
+[0m[92m
+[0m[0m[0m[01:10:50.6194] [INFO] f407-corrupt-app: Disposed.
